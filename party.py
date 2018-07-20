@@ -4,7 +4,7 @@ from flask import Flask, session, render_template, request, flash, redirect
 from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
-app.secret_key = "SECRETSECRETSECRET"
+app.secret_key = "SECRETSECREgTSECRET"
 
 
 def is_mel(name, email):
@@ -34,11 +34,11 @@ def most_and_least_common_type(treats):
     >>> most_and_least_common_type([{'type': 'dessert'}, {'type': 'dessert'}, {'type': 'dessert'}, {'type': 'dessert'}])
     ('dessert', 'dessert')
 
+    >>> most_and_least_common_type([{'type': 'dessert'}, {'type': 'dessert'}, {'type': 'appetizer'}, {'type': 'dessert'}, {'type': 'appetizer'}, {'type': 'appetizer'}])
+    ('dessert', 'dessert')
 
-
-
-
-
+    >>> most_and_least_common_type([])
+    (None, None)
     """
 
     types = {}
@@ -61,6 +61,7 @@ def most_and_least_common_type(treats):
             least_type = treat_type
 
     return (most_type, least_type)
+        # result = self.client.get("/")
 
 
 def get_treats():
